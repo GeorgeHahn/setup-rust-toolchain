@@ -45,12 +45,13 @@ All inputs are optional.
 If a [toolchain file](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file) (i.e., `rust-toolchain` or `rust-toolchain.toml`) is found in the root of the repository, it takes precedence.
 All input values are ignored if a toolchain file exists.
 
-| Name         | Description                                                                       | Default |
-| ------------ | --------------------------------------------------------------------------------- | ------- |
-| `toolchain`  | Rustup toolchain specifier e.g. `stable`, `nightly`, `1.42.0`.                    | stable  |
-| `target`     | Additional target support to install e.g. `wasm32-unknown-unknown`                |         |
-| `components` | Comma-separated string of additional components to install e.g. `clippy, rustfmt` |         |
-| `cache`      | Automatically configure Rust cache (using `Swatinem/rust-cache`)                  | true    |
+| Name                | Description                                                                       | Default |
+| ------------------- | --------------------------------------------------------------------------------- | ------- |
+| `toolchain`         | Rustup toolchain specifier e.g. `stable`, `nightly`, `1.42.0`.                    | stable  |
+| `target`            | Additional target support to install e.g. `wasm32-unknown-unknown`                |         |
+| `components`        | Comma-separated string of additional components to install e.g. `clippy, rustfmt` |         |
+| `cache`             | Automatically configure Rust cache (using `Swatinem/rust-cache`)                  | true    |
+| `working-directory` | Override the working directory (useful for toolchain files not in root)           |         |
 
 ## Outputs
 

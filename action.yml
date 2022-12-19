@@ -26,6 +26,9 @@ inputs:
     description: "Automatically configure Rust cache"
     required: false
     default: "true"
+  working-directory:
+    description: "Override the working directory"
+    required: false
 
 outputs:
   rustc-version:
@@ -79,6 +82,7 @@ runs:
       if: runner.os != 'Windows'
       shell: bash
     - name: rustup toolchain install ${{inputs.toolchain}}
+      working-directory: ${{inputs.working-directory}}
       run: |
         if [[ -f "rust-toolchain" || -f "rust-toolchain.toml" ]]
         then
