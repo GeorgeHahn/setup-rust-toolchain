@@ -51,7 +51,7 @@ All input values are ignored if a toolchain file exists.
 | `target`            | Additional target support to install e.g. `wasm32-unknown-unknown`                |         |
 | `components`        | Comma-separated string of additional components to install e.g. `clippy, rustfmt` |         |
 | `cache`             | Automatically configure Rust cache (using `Swatinem/rust-cache`)                  | true    |
-| `working-directory` | Override the working directory (useful for toolchain files not in root)           |         |
+| `working-directory` | Override the working directory (for Rust projects outside of the repo root)       |         |
 
 ## Outputs
 
