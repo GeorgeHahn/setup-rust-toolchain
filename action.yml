@@ -97,6 +97,7 @@ runs:
 
     - name: Print installed versions
       id: versions
+      working-directory: ${{inputs.working-directory}}
       run: |
         echo "rustc-version=$(rustc --version)" >> $GITHUB_OUTPUT
         rustc --version --verbose
