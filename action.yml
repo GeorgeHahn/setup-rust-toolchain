@@ -111,6 +111,20 @@ runs:
         echo "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT
       shell: bash
 
+    - id: cache-setup
+      name: "Setup Rust Caching Parameters"
+      if: inputs.cache == 'true'
+      run: |
+        if [[ -z "${{working-directory}}" ]]
+        then
+          echo "workspaces=\"${{inputs.working-directory}} -> target\"" >> $GITHUB_OUTPUT
+        else
+          echo "workspaces=" >> $GITHUB_OUTPUT
+        fi
+      shell: bash
+
     - name: "Setup Rust Caching"
       if: inputs.cache == 'true'
       uses: Swatinem/rust-cache@v2
+      with:
+        workspaces: "${{steps.cache-setup.outputs.workspaces}}"
