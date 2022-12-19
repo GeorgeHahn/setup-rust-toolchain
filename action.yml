@@ -117,9 +117,9 @@ runs:
       run: |
         if [[ -z "${{working-directory}}" ]]
         then
-          echo "workspaces=\"${{inputs.working-directory}} -> target\"" >> $GITHUB_OUTPUT
-        else
           echo "workspaces=" >> $GITHUB_OUTPUT
+        else
+          echo "workspaces=\"${{inputs.working-directory}} -> target\"" >> $GITHUB_OUTPUT
         fi
       shell: bash
 
