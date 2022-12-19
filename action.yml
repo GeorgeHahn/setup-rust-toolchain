@@ -115,7 +115,7 @@ runs:
       name: "Setup Rust Caching Parameters"
       if: inputs.cache == 'true'
       run: |
-        if [[ -z "${{working-directory}}" ]]
+        if [[ -z "${{inputs.working-directory}}" ]]
         then
           echo "workspaces=" >> $GITHUB_OUTPUT
         else
